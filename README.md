@@ -21,19 +21,19 @@
 ■ npm の場合
 
 ```console
-  npm i @shibajuku/vite-plugin-image-oretimaizer -D
+  npm i @hilosiva/vite-plugin-image-oretimaizer -D
 ```
 
 ■ yarn の場合
 
 ```console
-  yarn add @shibajuku/vite-plugin-image-oretimaizer -D
+  yarn add @hilosiva/vite-plugin-image-oretimaizer -D
 ```
 
 ■ pnpm の場合
 
 ```console
-  pnpm i @shibajuku/vite-plugin-image-oretimaizer -D
+  pnpm i @hilosiva/vite-plugin-image-oretimaizer -D
 ```
 
 > **警告**
