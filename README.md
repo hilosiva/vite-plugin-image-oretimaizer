@@ -16,27 +16,6 @@
 - `.webp`
 - `.avif`
 
-## 準備
-
-vite-plugin-image-oretimaizer はプライベートなパッケージのため、Shibajuku の GitHub チームに参加されている方のみ利用できます。
-
-1. GitHub の「read:packages」権限を付与した「[Personal access tokens](https://github.com/settings/tokens)」を取得
-2. プロジェクトのルートディレクトリに「.npmrc」ファイルを作成し、以下の内容で保存
-
-```
-@shibajuku:registry="https://npm.pkg.github.com"
-//npm.pkg.github.com/:_authToken={Personal access tokens}
-```
-
-※ {Personal access tokens} は「1」で取得したトークンに置き換える
-
-例
-
-```
-@shibajuku:registry="https://npm.pkg.github.com"
-//npm.pkg.github.com/:_authToken=ghp_XXXXXXXXXXXXXXXXXXXXX
-```
-
 ## インストール
 
 ■ npm の場合
@@ -71,7 +50,7 @@ vite-plugin-image-oretimaizer はプライベートなパッケージのため�
 
 ```javascript
 import { defineConfig } from "vite";
-import { ViteImageOretimaizer } from "@shibajuku/ViteImageOretimaizer"; // 追加
+import { ViteImageOretimaizer } from "@hilosiva/ViteImageOretimaizer"; // 追加
 
 export default defineConfig({
   plugins: [
@@ -211,7 +190,7 @@ npm run build
 
 ```javascript
 import { defineConfig } from "vite";
-import { ViteImageOretimaizer } from "@shibajuku/ViteImageOretimaizer";
+import { ViteImageOretimaizer } from "@hilosiva/ViteImageOretimaizer";
 
 export default defineConfig({
   plugins: [
