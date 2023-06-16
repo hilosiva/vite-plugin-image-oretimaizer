@@ -1,6 +1,6 @@
 # vite-plugin-image-oretimaizer
 
-[vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer) は、ビルド時に[Sharp.js](https://sharp.pixelplumbing.com/) を利用して画像アセットを最適化する俺流の [Vite](https://ja.vitejs.dev/) 用プラグイン。
+[vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer) は、ビルド時に[sharp](https://sharp.pixelplumbing.com/) を利用して画像アセットを最適化する俺流の [Vite](https://ja.vitejs.dev/) 用プラグイン。
 
 [![Publish package to GitHub Packages](https://github.com/hilosiva/vite-plugin-image-oretimaizer/actions/workflows/auto-publish.yml/badge.svg?branch=main)](https://github.com/hilosiva/vite-plugin-image-oretimaizer/actions/workflows/auto-publish.yml)
 
@@ -15,6 +15,28 @@
 - `.gif`
 - `.webp`
 - `.avif`
+
+## 準備
+
+vite-plugin-image-oretimaizer は GitHub Package によって公開されていますので、インストールには、GitHub の「[Personal access tokens (classic)](https://github.com/settings/tokens)」が必要となります。
+
+1. GitHub の「 **read:packages** 」権限を付与した「[Personal access tokens (classic)](https://github.com/settings/tokens)」を取得
+2. プロジェクトのルートディレクトリかホームディレクトリに「.npmrc」ファイルを作成し、以下の内容で保存
+
+```
+@{GitHubのユーザ名}:registry="https://npm.pkg.github.com"
+//npm.pkg.github.com/:_authToken={Personal access tokens}
+```
+
+※ {GitHub のユーザ名} は GitHub のユーザ名か組織名に置き換える
+※ {Personal access tokens} は「1」で取得したトークンに置き換える
+
+例
+
+```
+@hilosiva:registry="https://npm.pkg.github.com"
+//npm.pkg.github.com/:_authToken=ghp_XXXXXXXXXXXXXXXXXXXXX
+```
 
 ## インストール
 
@@ -38,7 +60,7 @@
 
 > **警告**
 >
-> vite-plugin-image-oretimaizer は内部で[Sharp.js](https://sharp.pixelplumbing.com/) を利用しています。自動でインストールはされませんので、予めご自身で開発依存関係として追加して下さい。
+> vite-plugin-image-oretimaizer は内部で[sharp](https://sharp.pixelplumbing.com/) を利用しています。自動でインストールはされませんので、予めご自身で開発依存関係として追加して下さい。
 >
 > ```console
 > npm i sharp -D
@@ -50,7 +72,7 @@
 
 ```javascript
 import { defineConfig } from "vite";
-import { ViteImageOretimaizer } from "@hilosiva/ViteImageOretimaizer"; // 追加
+import { ViteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer"; // 追加
 
 export default defineConfig({
   plugins: [
@@ -133,56 +155,56 @@ npm run build
 ### `jpg`
 
 - タイプ： Object
-- デフォルト： [Sharp.js の 「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)のデフォルト値
+- デフォルト： [sharp の「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)のデフォルト値
 
 `.jpg` の圧縮設定。
 
-[Sharp.js の 「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)と同じ設定が使えます。
+[sharp の「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)と同じ設定が使えます。
 
 ### `jpeg`
 
 - タイプ： Object
-- デフォルト： [Sharp.js の 「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)のデフォルト値
+- デフォルト： [sharp の「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)のデフォルト値
 
 `.jpeg` の圧縮設定。
 
-[Sharp.js の 「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)と同じ設定が使えます。
+[sharp の「jpeg」オプション](https://sharp.pixelplumbing.com/api-output#jpeg)と同じ設定が使えます。
 
 ### `png`
 
 - タイプ： Object
-- デフォルト： [Sharp.js の 「png」オプション](https://sharp.pixelplumbing.com/api-output#png)のデフォルト値
+- デフォルト： [sharp の「png」オプション](https://sharp.pixelplumbing.com/api-output#png)のデフォルト値
 
 `.png` の圧縮設定。
 
-[Sharp.js の 「png」オプション](https://sharp.pixelplumbing.com/api-output#png)と同じ設定が使えます。
+[sharp の「png」オプション](https://sharp.pixelplumbing.com/api-output#png)と同じ設定が使えます。
 
 ### `.gif`
 
 - タイプ： Object
-- デフォルト： [Sharp.js の 「gif」オプション](https://sharp.pixelplumbing.com/api-output#gif)のデフォルト値
+- デフォルト： [sharp の「gif」オプション](https://sharp.pixelplumbing.com/api-output#gif)のデフォルト値
 
 `.gif` の圧縮設定。
 
-[Sharp.js の 「gif」オプション](https://sharp.pixelplumbing.com/api-output#gif)と同じ設定が使えます。
+[sharp の「gif」オプション](https://sharp.pixelplumbing.com/api-output#gif)と同じ設定が使えます。
 
 ### `webp`
 
 - タイプ： Object
-- デフォルト： [Sharp.js の 「webp」オプション](https://sharp.pixelplumbing.com/api-output#webp)のデフォルト値
+- デフォルト： [sharp の「webp」オプション](https://sharp.pixelplumbing.com/api-output#webp)のデフォルト値
 
 `.webp` の圧縮設定。
 
-[Sharp.js の 「webp」オプション](https://sharp.pixelplumbing.com/api-output#webp)と同じ設定が使えます。
+[sharp の「webp」オプション](https://sharp.pixelplumbing.com/api-output#webp)と同じ設定が使えます。
 
 ### `avif`
 
 - タイプ： Object
-- デフォルト： [Sharp.js の 「avif」オプション](https://sharp.pixelplumbing.com/api-output#avif)のデフォルト値
+- デフォルト： [sharp の「avif」オプション](https://sharp.pixelplumbing.com/api-output#avif)のデフォルト値
 
 `.avif` の圧縮設定。
 
-[Sharp.js の 「avif」オプション](https://sharp.pixelplumbing.com/api-output#avif)と同じ設定が使えます。
+[sharp の「avif」オプション](https://sharp.pixelplumbing.com/api-output#avif)と同じ設定が使えます。
 
 ---
 
@@ -190,7 +212,7 @@ npm run build
 
 ```javascript
 import { defineConfig } from "vite";
-import { ViteImageOretimaizer } from "@hilosiva/ViteImageOretimaizer";
+import { ViteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
 
 export default defineConfig({
   plugins: [
