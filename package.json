@@ -1,7 +1,7 @@
 {
   "name": "@hilosiva/vite-plugin-image-oretimaizer",
   "description": "ビルド時にSharp.js を利用して画像アセットを最適化する俺流の Vite 用プラグイン。",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

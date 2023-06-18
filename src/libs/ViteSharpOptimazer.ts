@@ -77,9 +77,29 @@ export class ViteSharpOptimazer {
       avif: {},
     };
 
-    this.options = { ...this.defaultOptions, ..._options };
+    this.options = this.deepMerge(this.defaultOptions, _options);
 
     this._init(bundle);
+  }
+
+  private deepMerge(target: any, source: any) {
+    if (typeof target !== "object" || typeof source !== "object") {
+      return source;
+    }
+
+    const keys = Object.keys(source);
+
+    for (const key of keys) {
+      if (!(key in target)) {
+        target[key] = source[key];
+      } else if (typeof target[key] === "object" && typeof source[key] === "object") {
+        target[key] = this.deepMerge(target[key], source[key]);
+      } else {
+        target[key] = source[key];
+      }
+    }
+
+    return target;
   }
 
   private async _init(bundle: any) {
