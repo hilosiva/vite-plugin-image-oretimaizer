@@ -76,12 +76,12 @@
 
 ```javascript
 import { defineConfig } from "vite";
-import { ViteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer"; // 追加
+import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer"; // 追加
 
 export default defineConfig({
   plugins: [
     // 追加
-    ViteImageOretimaizer({
+    viteImageOretimaizer({
       /* オプション */
     }),
   ],
@@ -107,7 +107,7 @@ npm run build
 > ```javascript
 > export default defineConfig({
 >  plugins: [
->    ViteImageOretimaizer({
+>    viteImageOretimaizer({
 >      /* オプション */
 >    }),
 >  ],
@@ -216,11 +216,11 @@ npm run build
 
 ```javascript
 import { defineConfig } from "vite";
-import { ViteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
+import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
 
 export default defineConfig({
   plugins: [
-    ViteImageOretimaizer({
+    viteImageOretimaizer({
       generate: {
         preserveExt: true,
       },
