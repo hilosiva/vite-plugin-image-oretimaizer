@@ -2,7 +2,7 @@
 
 [vite-plugin-image-oretimaizer](https://github.com/hilosiva/vite-plugin-image-oretimaizer) は、ビルド時に[sharp](https://sharp.pixelplumbing.com/) を利用して画像アセットを最適化する俺流の [Vite](https://ja.vitejs.dev/) 用プラグイン。
 
-[![Publish package to GitHub Packages](https://github.com/hilosiva/vite-plugin-image-oretimaizer/actions/workflows/auto-publish.yml/badge.svg?branch=main)](https://github.com/hilosiva/vite-plugin-image-oretimaizer/actions/workflows/auto-publish.yml)
+
 
 ## 特徴
 
@@ -17,32 +17,6 @@
 - `.avif`
 
 ## インストール
-
-> **注意**
->
-> vite-plugin-image-oretimaizer は、GitHub Package に公開しているパッケージになります。
->
-> 従ってインストールには、GitHub の「[Personal access tokens (classic)](https://github.com/settings/tokens)」が必要となります。
->
-> すでに、お使いのマシンのホームディレクトリに、 GitHub の「 > **read:packages** 」権限を付与した「[Personal access tokens > (classic)](https://github.com/settings/tokens)」を記述した、「.npmrc」ファイルを作成されていない場合は、以下の操作で「.npmrc」ファイルを作成し、GitHub Package をインストールできるようにしておいて下さい。
->
-> 1. GitHub の「 **read:packages** 」権限を付与した「[Personal access tokens (classic)](https://github.com/settings/tokens)」を取得
-> 2. お使いのマシンのホームディレクトリ（他のプロジェクトでも使える）かプロジェクトのルートディレクトリ（このプロジェクトのみ使える）に「.npmrc」ファイルを作成し、以下の内容で保存
->
-> ```
-> @{GitHubのユーザ名}:registry="https://npm.pkg.github.com"
-> //npm.pkg.github.com/:_authToken={Personal access tokens}
-> ```
->
-> ※ {GitHub のユーザ名} は GitHub のユーザ名か組織名に置き換える
-> ※ {Personal access tokens} は「1」で取得したトークンに置き換える
->
-> 例
->
-> ```
-> @hilosiva:registry="https://npm.pkg.github.com"
-> //npm.pkg.github.com/:_authToken=ghp_XXXXXXXXXXXXXXXXXXXXX
-> ```
 
 ■ npm の場合
 
@@ -76,12 +50,12 @@
 
 ```javascript
 import { defineConfig } from "vite";
-import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer"; // 追加
+import { ViteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer"; // 追加
 
 export default defineConfig({
   plugins: [
     // 追加
-    viteImageOretimaizer({
+    ViteImageOretimaizer({
       /* オプション */
     }),
   ],
@@ -107,7 +81,7 @@ npm run build
 > ```javascript
 > export default defineConfig({
 >  plugins: [
->    viteImageOretimaizer({
+>    ViteImageOretimaizer({
 >      /* オプション */
 >    }),
 >  ],
@@ -216,11 +190,11 @@ npm run build
 
 ```javascript
 import { defineConfig } from "vite";
-import { viteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
+import { ViteImageOretimaizer } from "@hilosiva/vite-plugin-image-oretimaizer";
 
 export default defineConfig({
   plugins: [
-    viteImageOretimaizer({
+    ViteImageOretimaizer({
       generate: {
         preserveExt: true,
       },
