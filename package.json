@@ -1,17 +1,20 @@
 {
   "name": "@hilosiva/vite-plugin-image-oretimaizer",
   "description": "ビルド時にSharp.js を利用して画像アセットを最適化する俺流の Vite 用プラグイン。",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "files": [
     "dist"
   ],
   "license": "MIT",
+  "keywords": [
+    "Vite",
+    "Sharp",
+    "WebP",
+    "AVIF"
+  ],
   "scripts": {
     "build": "vite build"
   },
@@ -19,6 +22,10 @@
     "type": "git",
     "url": "https://github.com/hilosiva/vite-plugin-image-oretimaizer"
   },
+  "bugs": {
+    "url": "https://github.com/hilosiva/vite-plugin-image-oretimaizer/issues"
+  },
+  "homepage": "https://github.com/hilosiva/vite-plugin-image-oretimaizer",
   "author": "Shibata Hironori",
   "devDependencies": {
     "@types/node": "^20.3.1",
